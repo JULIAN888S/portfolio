@@ -1,0 +1,280 @@
+:root {
+  --color1: #D0D9C5; 
+  --color2: #8AA68D; 
+  --color3: #5D736E; 
+  --color4: #323A40; 
+  --color5: #1F1D26; 
+  --color6: #444953; /* Nuevo color más oscuro */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color5);
+  color: var(--color1);
+  font-family: 'Kanit', sans-serif;
+  line-height: 1.6;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: var(--color4);
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+.navbar a {
+  color: var(--color1);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.navbar a:hover {
+  color: var(--color2);
+}
+
+header, main {
+  flex: 1;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, var(--color5) 50%, transparent 50%);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero .content {
+  flex: 1;
+  color: var(--color1);
+}
+
+.hero .image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+h1 {
+  color: var(--color1);
+  font-size: 5rem;
+}
+
+h2 {
+  color: var(--color1);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  color: var(--color1);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  color: var(--color1);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--color2);
+  font-size: 1.6rem;
+}
+
+.services, .contact {
+  text-align: center;
+}
+
+.services-cards, .contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 5%;
+}
+
+.service-card, .contact-links a {
+  border-radius: 24px;
+  background: linear-gradient(145deg, var(--color4), var(--color5));
+  box-shadow: 10px 1px 32px var(--color4),
+              -10px -10px 25px var(--color3);
+  padding: 2rem;
+  flex: 1 1 30%;
+  max-width: 90%;
+}
+
+.service-card h3, h3 {
+  margin-bottom: 1rem;
+}
+
+.service-card p, .contact-links a {
+  font-size: 1.4rem;
+}
+
+.contact-links a {
+  color: var(--color1);
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--color4);
+  transition: background-color 0.3s ease;
+}
+
+.contact-links a:hover {
+  background-color: var(--color2);
+}
+
+footer {
+  background-color: var(--color4);
+  color: var(--color1);
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+}
+
+.table-wrapper {
+  margin: 10px 70px 70px;
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+}
+
+.fl-table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: var(--color1);
+  table-layout: fixed; /* Asegura columnas de tamaño uniforme */
+}
+
+.fl-table td, .fl-table th {
+  text-align: center;
+  padding: 8px;
+  border-right: 1px solid #f8f8f8;
+  word-wrap: break-word; /* Asegura que el contenido se ajuste */
+}
+
+.fl-table td {
+  font-size: 12px;
+  background-color: var(--color6); /* Fondo más oscuro para las celdas */
+  color: var(--color1);
+}
+
+.fl-table thead th {
+  color: #ffffff;
+  background: var(--color2);
+}
+
+.fl-table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: var(--color3);
+}
+
+.fl-table tr:nth-child(even) {
+  background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  .fl-table {
+    display: block;
+    width: 100%;
+  }
+  .table-wrapper:before {
+    content: "Scroll horizontally >";
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: white;
+    padding: 0 0 10px;
+  }
+  .fl-table thead, .fl-table tbody, .fl-table thead th {
+    display: block;
+  }
+  .fl-table thead th:last-child {
+    border-bottom: none;
+  }
+  .fl-table thead {
+    float: left;
+  }
+  .fl-table tbody {
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+  }
+  .fl-table td, .fl-table th {
+    padding: 20px .625em .625em .625em;
+    height: 60px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 120px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+  }
+  .fl-table thead th {
+    text-align: left;
+    border-bottom: 1px solid #f7f7f9;
+  }
+  .fl-table tbody tr {
+    display: table-cell;
+  }
+  .fl-table tbody tr:nth-child(odd) {
+    background: none;
+  }
+  .fl-table tr:nth-child(even) {
+    background: transparent;
+  }
+  .fl-table tr td:nth-child(odd) {
+    background: #F8F8F8;
+    border-right: 1px solid #E6E4E4;
+  }
+  .fl-table tr td:nth-child(even) {
+    border-right: 1px solid #E6E4E4;
+  }
+  .fl-table tbody td {
+    display: block;
+    text-align: center;
+  }
+}
